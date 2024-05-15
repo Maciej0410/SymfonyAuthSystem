@@ -1,0 +1,29 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+api_login_check:
+    path: /api/login_check
+    methods: [POST]
+
+api_login:
+    path: /api/login
+    controller: App\Controller\SecurityController::login
+    methods: [POST]
+
+api_token_check:
+    path: /api/token/check
+    controller: App\Controller\SecurityController::checkToken
+    methods: [GET]
+
+api_get_resource:
+    path: /api/resource
+    controller: App\Controller\ResourceController::getResource
+    methods: [GET]
+
+app_verify_email:
+    path: /verify/email/{token}
+    controller: App\Controller\UserController::verifyUserEmail
+    methods: [GET]
